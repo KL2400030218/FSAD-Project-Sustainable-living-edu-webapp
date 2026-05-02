@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<header>
+  <h2>🌱 Sustainable Living Dashboard</h2>
+  <button onclick="logout()">Logout</button>
+</header>
+
+<div class="top-bar">
+  <label>Select Role:</label>
+  <select id="roleSelect" onchange="setRole()">
+    <option value="user">User</option>
+    <option value="admin">Admin</option>
+  </select>
+</div>
+
+<div class="container">
+
+  <!-- Sidebar -->
+  <aside>
+    <ul>
+      <li onclick="showSection('lessons')">📘 Lessons</li>
+      <li onclick="showSection('projects')">🛠 Projects</li>
+      <li onclick="showSection('progress')">📊 Progress</li>
+    </ul>
+  </aside>
+
+  <!-- Content -->
+  <main>
+
+    <!-- LESSONS -->
+    <section id="lessons">
+      <h3>Lessons</h3>
+      <div id="lessonContainer"></div>
+
+      <!-- ADMIN ONLY -->
+      <div id="adminControls">
+        <h4>Add Lesson</h4>
+        <input id="name" placeholder="Lesson Name" />
+        <input id="marks" placeholder="Marks" />
+        <textarea id="content" placeholder="Lesson content..."></textarea>
+        <button onclick="addLesson()">Add Lesson</button>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="hidden">
+      <h3>Projects</h3>
+      <div id="projectContainer"></div>
+
+      <input id="projectName" placeholder="Project Name" />
+      <button onclick="addProject()">Add Project</button>
+    </section>
+
+    <!-- PROGRESS -->
+    <section id="progress" class="hidden">
+      <h3>Your Progress</h3>
+      <p id="progressText"></p>
+      <div class="progress-bar">
+        <div id="progressFill"></div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="dashboard.js"></script>
+</body>
+</html>

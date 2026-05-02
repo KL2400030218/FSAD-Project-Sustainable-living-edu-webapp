@@ -1,0 +1,53 @@
+body {
+  font-family: Arial;
+  margin: 0;
+  background: #f4f9f4;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background: #2e7d32;
+  color: white;
+}
+
+nav button {
+  margin-left: 10px;
+  padding: 8px 12px;
+  background: white;
+  border: none;
+  cursor: pointer;
+}
+
+.hero {
+  text-align: center;
+  padding: 60px;
+  background: #a5d6a7;
+}
+
+.form-container {
+  width: 300px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+}
+
+input {
+  width: 100%;
+  margin: 8px 0;
+  padding: 8px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: #2e7d32;
+  color: white;
+  border: none;
+}
+
+.hidden {
+  display: none;
+}

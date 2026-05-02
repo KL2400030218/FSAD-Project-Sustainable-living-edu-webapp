@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+</head>
+<body style="text-align:center;margin-top:100px;font-family:sans-serif">
+
+<h1>🌱 Sustainable Living Education</h1>
+
+<input id="username" placeholder="Username"><br><br>
+<input id="password" type="password" placeholder="Password"><br><br>
+
+<select id="role">
+  <option value="user">User</option>
+  <option value="admin">Admin</option>
+</select><br><br>
+
+<button onclick="login()">Login</button>
+
+<script>
+function login() {
+  const user = document.getElementById("username").value;
+  const pass = document.getElementById("password").value;
+  const role = document.getElementById("role").value;
+
+  if (!user || !pass) {
+    alert("Enter all fields");
+    return;
+  }
+
+  // simple demo auth
+  if (role === "admin" && pass !== "admin123") {
+    alert("Wrong admin password");
+    return;
+  }
+
+  localStorage.setItem("user", user);
+  localStorage.setItem("role", role);
+
+  window.location.href = "dashboard.html";
+}
+</script>
+
+</body>
+</html>
